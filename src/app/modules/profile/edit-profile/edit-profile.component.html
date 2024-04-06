@@ -1,0 +1,229 @@
+<div [ngClass]="{ '': !darkMode, 'dark': darkMode }">
+<div
+  class="position-absolute col-5 col-md-5 container edit my-3"
+  style="right: 0"
+  *ngIf="userData.name"
+>
+  <form
+    [formGroup]="editFormGroup"
+    class="d-flex flex-column col-12 gap-2 p-3 py-5 text-left p-sm-5 rounded position-relative"
+    style="background-color: #3b5d50"
+  >
+    <div>
+      <label for="name" class="yellow mb-1">{{ "name" | translate }}</label>
+      <div class="rounded p-2 inp">
+        <input
+          #name
+          type="text"
+          formControlName="name"
+          name="name"
+          id="name"
+          title="name"
+          placeholder="name"
+          [(ngModel)]="userData.name"
+          class="text-white col-11"
+        />
+
+        <i
+          class="fa-solid fa-pen text-white col-1"
+          (click)="toggleInput('name')"
+        ></i>
+      </div>
+      <div
+        class="error"
+        *ngIf="getFormControl('name').touched && getFormControl('name').errors"
+      >
+        <p
+          class="mb-0 text-danger"
+          *ngIf="getFormControl('name').errors['required']"
+        >
+          {{ "name error" | translate }}
+        </p>
+        <p
+          class="mb-0 text-danger"
+          *ngIf="getFormControl('name').errors['minlength']"
+        >
+          {{ "name valid" | translate }}
+        </p>
+      </div>
+    </div>
+    <div>
+      <label for="email" class="yellow mb-1">{{ "email" | translate }}</label>
+      <div class="rounded p-2 inp">
+        <input
+          #userEmail
+          type="text"
+          formControlName="email"
+          name="email"
+          id="email"
+          title="email"
+          placeholder="email"
+          [(ngModel)]="userData.email"
+          class="text-white col-11"
+        />
+        <i
+          class="fa-solid fa-pen text-white col-1"
+          (click)="toggleInput('email')"
+        ></i>
+      </div>
+      <div
+        class="error"
+        *ngIf="
+          getFormControl('email').touched && getFormControl('email').errors
+        "
+      >
+        <p
+          class="mb-0 text-danger"
+          *ngIf="getFormControl('email').errors['required']"
+        >
+          {{ "email error" | translate }}
+        </p>
+        <p
+          class="mb-0 text-danger"
+          *ngIf="getFormControl('email').errors['pattern']"
+        >
+          {{ "email invalid" | translate }}
+        </p>
+      </div>
+    </div>
+    <div>
+      <label for="phone" class="yellow mb-1">{{ "Phone" | translate }}</label>
+      <div class="rounded p-2 inp">
+        <input
+          #userPhone
+          type="text"
+          formControlName="phone"
+          name="phone"
+          id="phone"
+          title="phone"
+          placeholder="phone"
+          [(ngModel)]="userData.phone"
+          class="text-white col-11"
+        />
+        <i
+          class="fa-solid fa-pen text-white col-1"
+          (click)="toggleInput('phone')"
+        ></i>
+      </div>
+      <div
+        class="error"
+        *ngIf="
+          getFormControl('phone').touched && getFormControl('phone').errors
+        "
+      >
+        <p
+          class="mb-0 text-danger"
+          *ngIf="getFormControl('phone').errors['pattern']"
+        >
+          {{ "Phone invalid" | translate }}
+        </p>
+      </div>
+    </div>
+    <div>
+      <label for="address" class="yellow mb-1">{{
+        "Address" | translate
+      }}</label>
+      <div class="rounded p-2 inp">
+        <input
+          #address
+          type="text"
+          formControlName="address"
+          name="address"
+          id="address"
+          title="address"
+          placeholder="address"
+          [(ngModel)]="userData.address"
+          class="text-white col-11"
+        />
+        <i
+          class="fa-solid fa-pen text-white col-1"
+          (click)="toggleInput('address')"
+        ></i>
+      </div>
+    </div>
+    <button
+      type="submit"
+      class="position-absolute rounded py-2 px-4"
+      (click)="update()"
+      [disabled]="!editFormGroup.valid"
+    >
+      {{ "update" | translate }}
+    </button>
+  </form>
+</div>
+<div
+  class="position-absolute my-3 col-5 col-md-5 container bg-light"
+  style="right: 0"
+  *ngIf="!userData.name"
+>
+  <form
+    class="d-flex flex-column col-12 gap-2 p-3 py-5 text-left p-sm-5 rounded position-relative"
+  >
+    <div>
+      <div class="rounded p-2">
+        <div class="text-white col-11">
+          <ngx-skeleton-loader
+            count="1"
+            appearance="line"
+            animation="pulse"
+            [theme]="{ height: '40px' }"
+          >
+          </ngx-skeleton-loader>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="rounded p-2">
+        <div class="text-white col-11">
+          <ngx-skeleton-loader
+            count="1"
+            appearance="line"
+            animation="pulse"
+            [theme]="{ height: '40px' }"
+          >
+          </ngx-skeleton-loader>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="rounded p-2">
+        <div class="text-white col-11">
+          <ngx-skeleton-loader
+            count="1"
+            appearance="line"
+            animation="pulse"
+            [theme]="{ height: '40px' }"
+          >
+          </ngx-skeleton-loader>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="rounded p-2">
+        <div class="text-white col-11">
+          <ngx-skeleton-loader
+            count="1"
+            appearance="line"
+            animation="pulse"
+            [theme]="{ height: '40px' }"
+          >
+          </ngx-skeleton-loader>
+        </div>
+      </div>
+    </div>
+    <div class="position-absolute rounded py-2 px-4">
+      <div class="rounded p-2">
+        <div class="text-white col-11">
+          <ngx-skeleton-loader
+            count="1"
+            appearance="line"
+            animation="pulse"
+            [theme]="{ height: '40px' }"
+          >
+          </ngx-skeleton-loader>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+</div>

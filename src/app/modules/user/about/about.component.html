@@ -1,0 +1,156 @@
+<div [ngClass]="{ '': !darkMode, dark: darkMode }">
+  <div class="hero">
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-lg-5">
+          <div class="intro-excerpt">
+            <h1>{{ "About" | translate }}</h1>
+            <p class="mb-4">
+              {{ "About us" | translate }}
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-7"></div>
+      </div>
+    </div>
+  </div>
+  <!-- End Hero Section -->
+
+  <!-- Start Why Choose Us Section -->
+  <div class="why-choose-section">
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-lg-6">
+          <h2 class="section-title">{{ "why us" | translate }}</h2>
+          <p>{{ "why us2" | translate }}</p>
+
+          <div class="row my-5">
+            <div class="col-6 col-md-6">
+              <div class="feature">
+                <div class="icon">
+                  <img
+                    src="../../../assets/images/truck.svg"
+                    alt="Image"
+                    class="imf-fluid"
+                  />
+                </div>
+                <h3>{{ "shipping" | translate }}</h3>
+                <p>{{ "shipping2" | translate }}</p>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-6">
+              <div class="feature">
+                <div class="icon">
+                  <img
+                    src="../../../assets/images/bag.svg"
+                    alt="Image"
+                    class="imf-fluid"
+                  />
+                </div>
+                <h3>{{ "shoping" | translate }}</h3>
+                <p>
+                  {{ "shoping2" | translate }}
+                </p>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-6">
+              <div class="feature">
+                <div class="icon">
+                  <img
+                    src="../../../assets/images/support.svg"
+                    alt="Image"
+                    class="imf-fluid"
+                  />
+                </div>
+                <h3>{{ "24/support" | translate }}</h3>
+                <p>{{ "24/support2" | translate }}</p>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-6">
+              <div class="feature">
+                <div class="icon">
+                  <img
+                    src="../../../assets/images/return.svg"
+                    alt="Image"
+                    class="imf-fluid"
+                  />
+                </div>
+                <h3>{{ "Return" | translate }}</h3>
+                <p>{{ "Return2" | translate }}.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="img-wrap">
+            <img
+              src="../../../assets/images/why-choose-us-img.jpg"
+              alt="Image"
+              class="img-fluid"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Why Choose Us Section -->
+
+  <!-- Start Team Section -->
+  <div class="untree_co-section p-0">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-lg-5 mx-auto text-center">
+          <h2 class="section-title">{{ "Our team" | translate }}</h2>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div
+          *ngFor="let item of teamMember"
+          class="col-12 col-md-6 col-lg-4 mb-5 mb-md-0"
+        >
+          <div>
+            <img
+              [src]="item.image"
+              style="
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                margin: 20px auto;
+                display: flex;
+              "
+            />
+          </div>
+          <h3 class="text-center">
+            <span class="">{{ item.name | translate }}</span>
+          </h3>
+          <div
+            class="d-flex flex-column justify-content-center align-items-center gap-3 mt-4"
+          >
+            <button class="git">
+              <a href="{{ item.githup }}">
+                <img src="../../../../assets/images/github-logo.png" />
+                <p>Github</p>
+              </a>
+            </button>
+            <button class="link">
+              <a href="{{ item.linkedIn }}">
+                <img src="../../../../assets/images/icons8-linkedin.svg" />
+                <p>LinkedIn</p>
+              </a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Team Section -->
+
+  <!-- Start Footer Section -->
+  <app-footer></app-footer>
+</div>
+<!-- End Footer Section -->

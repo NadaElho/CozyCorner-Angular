@@ -1,0 +1,74 @@
+.untree_co-section .col-lg-3 {
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+.untree_co-section .col-lg-3:hover {
+  transform: translateY(-10px);
+  background-color: #eaeceb;
+}
+
+.untree_co-section .col-lg-3 img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.untree_co-section .col-lg-3 h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.untree_co-section .col-lg-3 h3 a {
+  color: #333;
+  transition: color 0.3s ease-in-out;
+}
+
+.untree_co-section .col-lg-3 .d-block {
+  color: #777;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.untree_co-section .col-lg-3 p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.untree_co-section .col-lg-3:hover h3 a {
+  color: #f9bf29;
+}
+
+.link,
+.git {
+  width: 200px;
+  padding: 3px 0;
+  background-color: transparent;
+  border: 1px solid #0a66c2;
+  border-radius: 7px;
+  color: #0a66c2;
+
+  height: 45px;
+}
+.link a,
+.git a {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  align-items: center;
+}
+.link img,
+.git img {
+  width: 30px;
+}
+.link p,
+.git p {
+  font-size: large;
+  margin: 0;
+  font-weight: 600;
+}
+.git {
+  border: 1px solid;
+  color: black;
+}
